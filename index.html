@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hermine, mon infini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="hearts" aria-hidden="true"></div>
+<button id="music" class="ghost small" aria-label="Musique">▶ Musique</button>
+
+<section id="intro">
+  <h1 class="brand">HERMINE</h1>
+  <p class="typed" id="introText">« Ceci n’est pas simplement un site.<br>C’est un petit morceau de mon cœur que je t’ai laissé ici. »</p>
+  <button id="enter" class="btn">ENTRER DANS MON UNIVERS ❤️</button>
+</section>
+
+<main id="main" hidden>
+  <section class="screen hero">
+    <h2 class="huge" data-parallax>Hermine.</h2>
+    <p class="lead">« Il y a des personnes qu’on rencontre.<br>Et puis il y a celles qui deviennent une partie de nous. »</p>
+    <p class="gold">« Toi, tu es devenue mon évidence. »</p>
+    <button class="btn" data-scroll="#g1">Découvrir à quel point je t’aime</button>
+  </section>
+
+  <section class="screen" id="g1">
+    <h3 class="title">À quel point je t’aime, Hermine ?</h3>
+    <button id="loveBtn" class="btn big">💗 APPUIE POUR LE DÉCOUVRIR</button>
+  </section>
+  <div id="rainOverlay" hidden>
+    <p id="rainPhrase"></p>
+    <div id="rainEnd" hidden>
+      <h2 class="huge">Je t’aime à l’infini.</h2>
+      <p class="lead">« Et même ce mot est trop petit. »</p>
+      <button id="again" class="btn">Encore une fois ❤️</button>
+      <button id="closeRain" class="ghost">Continuer</button>
+    </div>
+  </div>
+
+  <section class="screen" id="g2">
+    <h3 class="title">Combien de temps pour te dire ce que je ressens ?</h3>
+    <p class="lead">« Veux-tu que je te dise tout ce que je ressens pour toi ? »</p>
+    <div class="row" id="g2ask"><button class="btn" data-yes>OUI</button><button class="btn" data-yes>ÉVIDEMMENT</button></div>
+    <div id="feelings" class="lines"></div>
+    <button id="moreFeel" class="btn" hidden>Continuer</button>
+  </section>
+
+  <section class="screen" id="g3">
+    <p class="lead">« J’ai une question très importante pour toi... »</p>
+    <h3 class="title">Combien de fois est-ce que je pense à toi dans une journée ?</h3>
+    <div class="row wrap" id="quiz">
+      <button class="btn" data-a="0">10 fois</button><button class="btn" data-a="1">100 fois</button>
+      <button class="btn" data-a="2">1 000 fois</button><button class="btn" data-a="3">Beaucoup trop pour compter</button>
+    </div>
+    <p id="quizOut" class="gold big-out"></p>
+  </section>
+
+  <section class="screen" id="g4">
+    <h3 class="title">Attrape mon cœur</h3>
+    <p class="lead" id="catchScore">Cœurs attrapés : 0</p>
+    <div id="arena"><button id="catchHeart" aria-label="Attraper le cœur">❤️</button></div>
+    <p id="catchMsg" class="gold"></p>
+  </section>
+
+  <section class="screen" id="why">
+    <h3 class="title">Pourquoi toi ?</h3>
+    <div class="cards">
+      <article class="card reveal"><h4>❤️ Ton sourire</h4><p>« Parce qu’il peut changer l’ambiance d’une journée entière. »</p></article>
+      <article class="card reveal"><h4>✨ Ta personnalité</h4><p>« Parce qu’il y a quelque chose chez toi que je ne retrouve nulle part ailleurs. »</p></article>
+      <article class="card reveal"><h4>🌙 Nos moments</h4><p>« Parce que même les moments les plus simples deviennent importants lorsqu’ils sont avec toi. »</p></article>
+      <article class="card reveal"><h4>💫 Toi</h4><p>« Parce qu’au fond, je pourrais chercher mille raisons... et revenir toujours à la même : toi. »</p></article>
+    </div>
+  </section>
+
+  <section class="screen" id="ask">
+    <h3 class="huge sm">Hermine...</h3>
+    <p class="lead">« Si je pouvais revivre une seule journée avec toi encore et encore... »</p>
+    <button id="dayBtn" class="btn">Laquelle choisirais-tu ?</button>
+    <p id="dayOut" class="gold big-out"></p>
+  </section>
+
+  <section class="screen" id="word">
+    <p class="lead">« Écris le mot qui représente le mieux ce que nous sommes. »</p>
+    <div class="row"><input id="wordIn" type="text" maxlength="40" autocomplete="off" aria-label="Ton mot"><button id="wordBtn" class="btn">Valider</button></div>
+    <div id="wordOut" class="lines"></div>
+  </section>
+
+  <section class="screen" id="if">
+    <h3 class="title">Si mon amour était...</h3>
+    <div class="cards">
+      <button class="card flip"><span>Une couleur…</span><em>« Il serait impossible à définir. »</em></button>
+      <button class="card flip"><span>Une distance…</span><em>« Il n’aurait pas de destination. »</em></button>
+      <button class="card flip"><span>Un nombre…</span><em>« Il n’existerait pas encore. »</em></button>
+      <button class="card flip"><span>Un mot…</span><em>« Ce serait Hermine. »</em></button>
+    </div>
+  </section>
+
+  <section class="screen" id="count">
+    <h3 class="title">Depuis que tu es entrée dans ma vie...</h3>
+    <div class="cards">
+      <div class="stat reveal"><b>∞</b><span>Pensées pour toi</span></div>
+      <div class="stat reveal"><b>∞</b><span>Sourires grâce à toi</span></div>
+      <div class="stat reveal"><b>∞</b><span>Moments que je veux encore vivre</span></div>
+      <div class="stat reveal"><b>∞</b><span>Amour</span></div>
+    </div>
+  </section>
+
+  <section class="screen dark" id="notend">
+    <p class="seq" data-t="0">« Tu es arrivée jusqu’ici... »</p>
+    <p class="seq" data-t="1">« Mais il y a quelque chose que je n’ai pas encore réussi à te montrer. »</p>
+    <h3 class="huge sm seq" data-t="2">« Tout ce que je ressens pour toi ne rentre pas dans un site web. »</h3>
+    <p class="seq" data-t="3">« Alors je vais devoir continuer à te le montrer dans la vraie vie. »</p>
+  </section>
+
+  <section class="screen" id="final">
+    <h2 class="huge brand">HERMINE</h2>
+    <p class="seq" data-t="0">« Si un jour tu doutes de la place que tu occupes dans mon cœur... »</p>
+    <h3 class="title seq" data-t="1">« Reviens ici. »</h3>
+    <p class="seq" data-t="2">« Je te le rappellerai autant de fois qu’il le faudra. »</p>
+    <h2 class="huge sm seq" data-t="3">« Je t’aime. ❤️ »</h2>
+    <button id="restart" class="btn">Recommencer depuis le début</button>
+  </section>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
